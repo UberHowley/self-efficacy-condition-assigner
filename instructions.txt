@@ -1,0 +1,21 @@
+(1) Students take SurveyMonkey survey including measures of self-efficacy. 
+(2) Download student responses as follows:
+   (2a) Go to SurveyMonkey.com and sign in.
+   (2b) Under 'My Surveys' find the self-efficacy survey and click it.
+   (2c) Go to 'Collect Responses' and select the 'Web Link' collector. 
+   (2d) Click the 'Analyze Results' tab and then 'Download Results' from the left-hand column.
+   (2e) Choose 'All Responses Collected' and then the 'Cells' scroll down menu will appear. Choose 'Numerical Value'.
+   (2f) Enter your email address at the bottom, and then click the 'Request Download' button. You'll have to wait for Survey Monkey to email it to you.
+
+Once you've downloaded the SurveyMonkey file, you need to do a little processing, as follows:
+(3) Save the csv file as 'surveyResponses.csv' into the same directory as the Java 'src' folder.
+(4) Delete all columns before the User ID column. Move the "User ID:" text down one row, to be just above the responses. (SurveyMonkey basically has two header rows, one is sort of useless)
+(5) Make sure that under the 'Section' column, you have ONLY the students in the current section. If this is the second time you're running it, you'll need to save the other sections to another file, and leave just the current section (1, 2, 3, 4, 5, or 6). If this is the first time you're running it, this shouldn't be a problem.
+(6) Delete the entire first row. It's easier than doing more processing.
+(7) Rename the first 4 self-efficacy questions/column-headers to 'MQ1', 'MQ2', 'MQ3', and 'MQ4'. 
+
+You should now be ready to run the Java software. The main class is 'SEAnalyzer'. It is also a bit of a process:
+(8) It'll give you some summative information when you run it, such as how many legitimate participants you have, a suggested number of total teams, and if it's not the first time it's been run, it'll list the break down of conditions by team composition type. 
+(9) Next, it will ask you how many pairs of each team composition you'd like (i.e., 5 low-low, 3 high-high, 1 low-high). 
+(10) Assuming your input is valid, it'll spit out some more logging-type information, before telling you how many of each team composition type was created, and then listing all the students, their teams, and their conditions.
+(11) It also outputs two files to the same directory as the 'src' folder. The one your tutor needs is "thermo11_teamsTutor.csv". There is another cumulative/debugging file outputted to "thermo11_teams.csv".
